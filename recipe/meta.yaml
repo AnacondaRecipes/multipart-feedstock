@@ -26,7 +26,6 @@ requirements:
 test:
   source_files:
     - test
-    - multipart.py
   imports:
     - multipart
   commands:
