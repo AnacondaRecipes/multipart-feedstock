@@ -18,6 +18,7 @@ requirements:
   host:
     - python
     - pip
+    - wheel
   run:
     - python
 
@@ -36,15 +37,15 @@ test:
     - pytest
 
 about:
-  home: http://github.com/defnull/multipart
+  home: https://github.com/defnull/multipart
   summary: Parser for multipart/form-data.#
   description: |
     This module provides a parser for the multipart/form-data format. It can read from a file, a socket or a WSGI environment. The parser can be used to replace cgi.FieldStorage to work around its limitations.
   license: MIT
   license_file: LICENSE
   license_family: MIT
-  dev_url: http://github.com/defnull/multipart
-  doc_url: http://github.com/defnull/multipart
+  dev_url: https://github.com/defnull/multipart
+  doc_url: https://github.com/defnull/multipart
 
 extra:
   recipe-maintainers:
