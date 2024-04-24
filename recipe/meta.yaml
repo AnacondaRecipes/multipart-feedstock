@@ -1,0 +1,51 @@
+{% set name = "multipart" %}
+{% set version = "0.2.4" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/multipart-{{ version }}.tar.gz
+  sha256: 06ba205360bc7096fefe618e4f1e9b2cdb890b4f2157053a81f386912a2522cb
+
+build:
+  skip: true # [py<37]
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
+
+requirements:
+  host:
+    - python
+    - pip
+  run:
+    - python
+
+test:
+  source_files:
+    - test
+    - multipart.py
+  imports:
+    - multipart
+  commands:
+    - pip check
+    # skip test due to https://github.com/defnull/multipart/issues/37
+    - pytest -v -k "not test_urlencoded" test
+  requires:
+    - pip
+    - pytest
+
+about:
+  home: http://github.com/defnull/multipart
+  summary: Parser for multipart/form-data.#
+  description: |
+    This module provides a parser for the multipart/form-data format. It can read from a file, a socket or a WSGI environment. The parser can be used to replace cgi.FieldStorage to work around its limitations.
+  license: MIT
+  license_file: LICENSE
+  license_family: MIT
+  dev_url: http://github.com/defnull/multipart
+  doc_url: http://github.com/defnull/multipart
+
+extra:
+  recipe-maintainers:
+    - JamesRobertsonGames
