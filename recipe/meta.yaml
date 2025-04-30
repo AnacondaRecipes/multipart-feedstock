@@ -29,8 +29,7 @@ test:
     - multipart
   commands:
     - pip check
-    # skip test due to https://github.com/defnull/multipart/issues/37
-    - pytest -v -k "not test_urlencoded" test
+    - pytest -v test
   requires:
     - pip
     - pytest
