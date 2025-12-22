@@ -36,9 +36,11 @@ test:
 
 about:
   home: https://github.com/defnull/multipart
-  summary: Parser for multipart/form-data.#
+  summary: A fast multipart/form-data parser for python
   description: |
-    This module provides a parser for the multipart/form-data format. It can read from a file, a socket or a WSGI environment. The parser can be used to replace cgi.FieldStorage to work around its limitations.
+    This module provides a parser for the multipart/form-data format.
+    It can read from a file, a socket or a WSGI environment. The parser
+    can be used to replace cgi.FieldStorage to work around its limitations.
   license: MIT
   license_file: LICENSE
   license_family: MIT
